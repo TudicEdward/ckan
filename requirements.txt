@@ -68,7 +68,7 @@ lxml==4.9.1
     # via feedgen
 mako==1.2.2
     # via alembic
-markdown==3.4.3
+markdown==3.3.7
     # via -r requirements.in
 markupsafe==2.1.1
     # via
