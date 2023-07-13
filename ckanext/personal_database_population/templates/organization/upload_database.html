@@ -1,0 +1,57 @@
+{% extends "organization/read_base.html" %}
+
+{% block primary_content %}
+    {% block page_header %}
+        {{ super() }}
+    {% endblock %}
+    {% block primary_content_inner %}
+        <h1 class="custom_header">Upload database information form.</h1>
+        {% block form %}
+        <p class="form-actions">
+        <form id="upload_from_personal_database">
+            <h4 class="custom_header4"> First part of the form collects information about the connection to the database.</h4>
+            <label for="cars">Choose the database that you are using</label>
+            <select class="custom_form_input" name="database_program" id="database_program">
+                <!-- <optgroup label="Swedish Cars"> -->
+                    <option value="mysql">MySQL</option>
+                    <option value="mariadb">MariaDB</option>
+                <!-- </optgroup> -->
+            </select>
+            <label for="form_connection_username">Username *</label>
+            <input class="custom_form_input" id="form_connection_username" type="text" name="connection_username" placeholder="Your connection username" required><br>
+            <label for="form_connection_password">Password *</label>
+            <input class="custom_form_input" id="form_connection_password" type="password" name="connection_password" placeholder="Your connection password" required><br>
+            <label for="form_connection_hostname">Hostname *</label>
+            <input class="custom_form_input" id="form_connection_hostname" type="text" name="connection_hostname" placeholder="Your connection hostname" required><br>
+            <label for="form_connection_port">Port *</label>
+            <input class="custom_form_input" id="form_connection_port" type="text" name="connection_port" placeholder="Your connection port" required><br>
+            <label for="form_connection_database">Database *</label>
+            <input class="custom_form_input" id="form_connection_database" type="text" name="connection_database" placeholder="Your connection database" required><br>
+
+            <h4 class="custom_header4"> Second part of the form collects information for the resource or dataset uploaded.</h4>
+            <label for="form_dataset">Dataset *</label>
+            <input class="custom_form_input" id="form_dataset" type="text" name="dataset_name" placeholder="Your Dataset Name" required><br>
+            <label for="form_dataset_description">Dataset description</label>
+            <input class="custom_form_input" id="form_dataset_description" type="text" name="dataset_description" placeholder="Your Dataset Description"><br>
+            <label for="form_author_name">Author name</label>
+            <input class="custom_form_input" id="form_author_name" type="text" name="author_name" placeholder="Author's name"><br>
+            <label for="form_author_email">Author email</label>
+            <input class="custom_form_input" id="form_author_email" type="text" name="author_email" placeholder="Author's email"><br>
+            <label for="form_resource">Resource *</label>
+            <input class="custom_form_input" id="form_resource" type="text" name="resource_name" placeholder="Your Resource Name" required><br>
+            <label for="form_resource_description">Resource description</label>
+            <input class="custom_form_input" id="form_resource_description" type="text" name="resource_description" placeholder="Your Resource Description"><br>
+            
+            <h4 class="custom_header4"> The last part of the form collects the query for the upload.</h4>
+            <label for="form_query">Query *</label>
+            <input class="custom_form_input" id="form_query1" type="text" name="form_query1" placeholder="Query for the upload" required><br>
+        </form>
+        <div id = "outer">
+            <div class="inner_a"><button onclick="get_query_form_information()" class="btn btn-success" type="button" name="upload_resources" >{{ _('Upload') }}</button></div>
+            <div class="inner_b"><button onclick="add_query_field()" class="btn btn-danger" type="button" name="upload_resources" >{{ _('Add') }}</button></div>
+            </div>
+            <p class="custom_paragraph">The fields that have * are required.</p>
+        </p>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}

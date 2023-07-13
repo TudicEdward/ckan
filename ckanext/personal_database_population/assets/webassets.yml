@@ -1,0 +1,14 @@
+custom-javascript:
+  filter: rjsmin
+  output: personal_database_population/%(version)s_custom-javascript.js
+  contents:
+    - custom-javascript.js
+  extra:
+    preload:
+      - base/main
+
+custom-css:
+  filter: cssrewrite
+  output: personal_database_population/%(version)s_custom-css.css
+  contents:
+    - custom-css.css

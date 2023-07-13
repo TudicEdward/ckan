@@ -1,0 +1,11 @@
+{% extends "organization/read_base.html" %}
+
+{% block primary_content %}
+    {% block page_header %}
+        {{ super() }}
+    {% endblock %}
+    {% block primary_content_inner %}
+        <h1 class="custom_header">Error while submitting form!</h1> 
+        <h3 class="custom_header">The Dataset name must be purely lowercase alphanumeric (ascii) characters and contain only these symbols: "-" or "_" with no space.</h3>
+    {% endblock %}
+{% endblock %}

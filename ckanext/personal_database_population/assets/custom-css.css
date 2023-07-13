@@ -1,0 +1,35 @@
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner_a
+{
+    display: inline-block;
+    text-align: start;
+}
+.inner_b
+{
+    display: inline-block;
+    text-align:end;
+}
+.custom_form_input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+.custom_header{
+    text-indent: 15px;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+.custom_header4{
+    text-indent: 5px;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+.custom_paragraph{
+    padding: 12px 20px;
+    margin: 8px 0;
+}

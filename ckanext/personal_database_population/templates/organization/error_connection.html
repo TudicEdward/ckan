@@ -1,0 +1,11 @@
+{% extends "organization/read_base.html" %}
+
+{% block primary_content %}
+    {% block page_header %}
+        {{ super() }}
+    {% endblock %}
+    {% block primary_content_inner %}
+        <h1 class="custom_header">Error while submitting form!</h1> 
+        <h3 class="custom_header">The connection could not be established. Please verify again the connection information or the given query.</h3>
+    {% endblock %}
+{% endblock %}

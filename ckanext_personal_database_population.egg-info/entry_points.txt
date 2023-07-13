@@ -1,0 +1,4 @@
+
+        [ckan.plugins]
+        database_population=ckanext.personal_database_population.plugin:PersonalDatabasePopulationPlugin
+        

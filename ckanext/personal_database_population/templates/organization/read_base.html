@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block content_primary_nav %}
+    {{ super() }}
+    {% if h.check_access('organization_update', {'id': group_dict.id}) %}
+        {{ h.build_nav_icon('upload_endpoint.upload_tab', _('Upload'), org_id=group_dict.name, icon='sitemap') }}
+    {% endif %}
+{% endblock %}
+

@@ -1,38 +1,20 @@
-# encoding: utf-8
-
-import os
+# -*- coding: utf-8 -*-
 from setuptools import setup
 
-# Avoid problem releasing to pypi from vagrant
-if os.environ.get("USER", "") == "vagrant":
-    del os.link
-
-extras_require = {}
-_extras_groups = [
-    ("requirements", "requirements.txt"),
-    ("dev", "dev-requirements.txt"),
-]
-
-HERE = os.path.dirname(__file__)
-for group, filepath in _extras_groups:
-    with open(os.path.join(HERE, filepath), "r") as f:
-        extras_require[group] = f.readlines()
-
 setup(
+    # If you are changing from the default layout of your extension, you may
+    # have to change the message extractors, you can read more about babel
+    # message extraction at
+    # http://babel.pocoo.org/docs/messages/#extraction-method-mapping-and-configuration
     message_extractors={
-        "ckan": [
-            ("**.py", "python", None),
-            ("**.js", "javascript", None),
-            ("templates/**.html", "ckan", None),
-            ("templates/**.txt", "ckan", None),
-            ("public/**", "ignore", None),
-        ],
-        "ckanext": [
-            ("**.py", "python", None),
-            ("**.js", "javascript", None),
-            ("**.html", "ckan", None),
-            ("multilingual/solr/*.txt", "ignore", None),
+        'ckanext': [
+            ('**.py', 'python', None),
+            ('**.js', 'javascript', None),
+            ('**/templates/**.html', 'ckan', None),
         ],
     },
-    extras_require=extras_require,
+    entry_points='''
+        [ckan.plugins]
+        database_population=ckanext.personal_database_population.plugin:PersonalDatabasePopulationPlugin
+        ''',
 )
