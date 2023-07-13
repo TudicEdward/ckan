@@ -8,11 +8,9 @@ Demo:
 
 Once the extension is installed, if the user is logged in and has admin or editor role for an organization he will have available the "Upload" navigation tab.
 
-![Alt text](image link)
+![Alt text](https://github.com/TudicEdward/ckanext-personal_database_population/blob/master/upload%20tab.png)
 
 After selecting the "Upload" Tab a form page will be loaded.
-
-![Alt text](image link)
 
 form page components:
 -database program selection
@@ -20,7 +18,9 @@ form page components:
 -dataset and resource information
 -query / queries input for the data to be uploaded
 
-![Alt text](image link)
+![Alt text](https://github.com/TudicEdward/ckanext-personal_database_population/blob/master/part1.png)
+
+![Alt text](https://github.com/TudicEdward/ckanext-personal_database_population/blob/master/part2.png)
 
 Execution process:
 
